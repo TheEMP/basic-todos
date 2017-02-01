@@ -20,11 +20,16 @@
 
         <form @submit.prevent="submitTodo(todo)">
             <input type="text" v-model="todo">
+            <button @click="clear" type="button">CLEAR</button>
         </form>
 
         <div class="todos">
-            <ul v-for="todo in todos">
-                <li>{{todo}}</li>
+            <ul v-for="(todo, i) in todos">
+                <li>
+                    {{todo}}
+                    <button type='button' @click="removeTodo(i)">X</button>
+                </li>
+                
             </ul>
         </div>
 
