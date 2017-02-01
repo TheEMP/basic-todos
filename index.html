@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>To Do List</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Todo List App!</h1>
+        <img src="https://vuejs.org/images/logo.png">
+    </div>
+
+    <div id="root">
+
+        <form @submit.prevent="submitTodo(todo)">
+            <input type="text" v-model="todo">
+        </form>
+
+        <div class="todos">
+            <ul v-for="todo in todos">
+                <li>{{todo}}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--Vue 2.x-->
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <!--Scripts-->
+    <script src="todos.js"></script>
+</body>
+
+</html>
